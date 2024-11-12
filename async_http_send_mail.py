@@ -29,7 +29,7 @@ symbol_co = 40
 
 async def login_email(_sender=None, queue=None):
     print(symbol_co * "#")
-    # 这里不使用with  as session：是因为后面还需要使用不能在这里自动关闭session，否则在sendmail中无法使用
+    # 这里不使用async with  as session：是因为后面还需要使用不能在这里自动关闭session，否则在sendmail中无法使用
     session = aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=False))
     # 这里不使用async with   as： 形式是因为当时怕影响sessio的cookie
     response = await session.get(
