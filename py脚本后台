@@ -1,0 +1,5 @@
+1. 使用 pywin32 库创建 Windows 服务
+pywin32 是一个 Python 扩展库，提供了与 Windows API 交互的功能，可以用来创建、注册和管理 Windows 服务
+。以下是使用 pywin32 创建服务的基本步骤：
+2. 使用 NSSM (Non-Sucking Service Manager)
+3. 使用 Windows 任务计划程序
