@@ -232,9 +232,10 @@ async def send_mail_all(re_url=None):
     await queue.put(None)
     consumer_tasks = [send_mail(re_url, queue, event) for _ in _sender]
     print(f"创建的发送邮件任务数量: {len(consumer_tasks)}")
+    # await asyncio.gather(*producer_tasks, *consumer_tasks)这种也是可以的但是没有意义，因为我们要控制任务执行，这种方式无法控制
     await asyncio.gather(*consumer_tasks)
     await queue.join()
-
+    
 
 # 运行主函数
 
